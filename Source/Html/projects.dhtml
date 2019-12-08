@@ -1,0 +1,100 @@
+<!--@ output ../serverRoot/Views/Home/Projects.cshtml:server @-->
+<!--@ output ../WebRoot/Projects.html @-->
+<!--@ include header:! @-->
+
+<!--Open source projects title-->
+<div class="container" >
+    <h1 class="title-header top">Open-Source projects</h1>
+</div>
+<!--Projects List-->
+
+<!--CNN model-->
+<div class="container-inner-full-border">
+    <!--Title-->
+    <h1 class="mini-title-header">CNN model weight compresion</h5>
+    <!--Goal-->
+    <p><span class="c1">Goal: </span>
+        Due to the constant demand and need for AI technologies in different fields, 
+        and in some of those fields we do not have enough memory to hold all the weights of the <a href="https://en.wikipedia.org/wiki/Convolutional_neural_network" class="link-base" >CNN model</a> 
+         to use it in its full potential. I started researching on all of those networks starting from Alex Net to Google mobile net to many other fascinating networks and then made our own version which got to 
+         <span class="c1">0.13 MB memory footprint</span> on Kaggel cats and dogs.
+        digit dataset with <span class="c1">70% accuracy</span>.
+    </p>
+    <!--Tech stack-->
+    <p><span class="c1">Tech-stack: </span>
+        Python, Keras, Tenorflow, Jupytier notebook.
+    </p>
+    <!--Year-->
+    <p><span class="c1">Year: </span>2019</p>
+    <!--Country-->
+    <p ><span class="c1">Country: </span>Syria</p>
+    <a href="https://github.com/Saria-houloubi/CNN_keras_model_compression" ><img  class="image-link" src="/Assets/Images/Icons/github.svg" alt="github-icon"></a>
+</div>
+
+
+
+<!--Behavioral economics website-->
+<div class="container-inner-full-border">
+    <!--Title-->
+    <h1 class="mini-title-header">Behavioral Economics (contribution)</h5>
+    <!--Goal-->
+    <p><span class="c1">Goal: </span>
+        Supporting a Master student in Economics who is trying to change the way of taking a survey from a boring “fill the boxes” style to her own unique way of making a little website that has a game for the survey taker and then collects the data and saves it in a database for further study. I contributed in the last part of the project for saving and exporting the data to excel and text. 09
+    </p>
+    <!--Tech stack-->
+    <p><span class="c1">Tech-stack: </span>
+        Node.js, MongoDB, javascript, HTML/CSS.
+    </p>
+    <!--Year-->
+    <p><span class="c1">Year: </span>2019</p>
+    <!--Country-->
+    <p ><span class="c1">Country: </span>Syria</p>
+    <a href="https://github.com/WaleedChayeb/BehavioralEconomics" ><img  class="image-link" src="/Assets/Images/Icons/github.svg" alt="github-icon"></a>
+</div>
+
+
+<!--Task-Scheduling Simulator website-->
+<div class="container-inner-full-border">
+    <!--Title-->
+    <h1 class="mini-title-header">Task-Scheduling Simulator</h5>
+    <!--Goal-->
+    <p><span class="c1">Goal: </span>
+        For my 4th year in collage I wanted to build something for my own. I worked under the supervision of Dr. Eng. Samer Suliman. We worked on a simulator for different algorithms on how a processor executes instructions such as Scoreboarding and Tomsula. The simulator also shows how loops are being executed and unrolled, More features are being added to the simulator.   
+    </p>
+    <!--Tech stack-->
+    <p><span class="c1">Tech-stack: </span>
+        C#, WPF, MVVM.
+    </p>
+    <!--Year-->
+    <p><span class="c1">Year: </span>2017</p>
+    <!--Country-->
+    <p ><span class="c1">Country: </span>Syria</p>
+    <a href="https://github.com/Saria-houloubi/Task-Scheduling-Simulator" ><img  class="image-link" src="/Assets/Images/Icons/github.svg" alt="github-icon"></a>
+    <a href="/download/TaskSchedulingSimulator" ><img  class="image-link" src="/Assets/Images/Icons/download.svg" alt="github-icon"></a>
+</div>
+    
+
+
+<!--This website-->
+<div class="container-inner-full-border">
+    <!--Title-->
+    <h1 class="mini-title-header">Saria houloubi website</h5>
+    <!--Goal-->
+    <p><span class="c1">Goal: </span>
+        This website is all open-source for anyone that wants to see the code 
+        and how I built it.
+    </p>
+    <!--Tech stack-->
+    <p><span class="c1">Tech-stack: </span>
+        C#, ASP.net Core, javascript, HTML/CSS, PhotoShop.
+    </p>
+    <!--Year-->
+    <p><span class="c1">Year: </span>2019</p>
+    <!--Country-->
+    <p ><span class="c1">Country: </span>UAE</p>
+    <a href="https://github.com/Saria-houloubi/Task-Scheduling-Simulator" ><img  class="image-link" src="/Assets/Images/Icons/github.svg" alt="github-icon"></a>
+</div>
+    
+
+
+<!--@ include footer:! @-->

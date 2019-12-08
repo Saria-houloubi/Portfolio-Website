@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Code+Pro:300,400,500,600,700&display=swap');
+
+html{
+    margin: 0;
+    font-family: 'Source Code Pro';
+    line-height: $base-line-height;
+    background: $color5;
+    color: $color6;
+    font-weight: normal;
+}
+
+body{
+    margin: 0;
+}
+
+p {
+    font-weight: lighter;
+}
+
+
+.center{
+    max-width:$half-max-width;
+    margin-right: auto;
+    margin-left: auto;
+}
