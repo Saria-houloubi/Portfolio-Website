@@ -20,9 +20,9 @@ namespace ServerRoot.Models
         /// <summary>
         /// The owner of the program
         /// </summary>
-        public string OwnerName { get; set; }
+        public string Owner { get; set; }
         /// <summary>
-        /// The verstion of the program
+        /// The verstion of the     
         /// </summary>
         public float Version { get; set; }
         #endregion
