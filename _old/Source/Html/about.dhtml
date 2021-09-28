@@ -1,0 +1,75 @@
+<!--@ output ../serverRoot/Views/Home/About.cshtml:server @-->
+<!--@ output ../WebRoot/About.html @-->
+<!--@ include header:! @-->
+
+
+
+<!--brief.cpp-->
+<div class="container-inner top">
+    <p>C:\Saria_houloubi><span class="c1"> brief.cpp</span></p>
+    <p>My full name is Mohammad Saria Houlboui I am from Syria,
+    but moved to the <span class='c1'>United Arabe Emirates (UAE) on Novembre 2019</span>
+    after finishing my university degree as a computer enginner
+    with a  <span class="c1">GPA of 3.0</span>.<br/> 
+    I started developing software since my first year in university on which I have learned many programming 
+    langauges and worked on many tasks, developed software
+    and helped many people in this field,
+    I love doing it and will keep exploring more as I move forward.</p>
+</div>
+
+<!--employment history-->
+<div class="container-inner">
+    <p>C:\Saria_houloubi><span class="c1"> employment.txt</span></p>
+    <p>
+        I started in my 2nd university year selling desktop and database projects to other colleagues using .Net technologies. Through that I managed to gain good experience in desktop development. This helped me to work as a remote WPF developer for a company in Iraq. After developing many small to mid-level management applications I wanted to try new things so I took an offer as a freelancer backend developer using Asp.net core. I started with the project but there was no team leader that was qualified to lead the project. This lead to me being assigned to lead the team as I was the most experienced between the developing team. Leading the team gave me a lot of experience in planning sprints and interacting with other teammates. After that I moved to .Net developing and acted as a team leader (remote) for a company in Czech Republic. We worked on task based contracts for other companies.
+        <br/>
+        Along the way I developed a simulator for a subject in my University called parallel processors. The project simulated how the processors execute instructions in assembly. I also started my YOUTUBE channel and kept on selling programs. I also developed a CNN network for classification that took the base of ResNet blocks but in a shallow network so we can drop the memory used to store the weights without much accuracy drop.
+        Currently I am working on developing new skills in AI, and .Net development.
+    </p>
+</div>
+
+<!--skills-->
+<div class="container-inner">
+    <p>C:\Saria_houloubi><span class="c1"> skill.cpp “softwear”</span></p>
+    <p>
+    For those interested in exact details or considering me for
+    a project and need to know particulars, here is a list of
+    the main languages, methodologies and platforms 
+    I am well-versed in:
+    </p>
+    <ul>
+        <li>.Net</li>
+        <li>Ajax</li>
+        <li>Arduino	</li>
+        <li>ASP.net</li>
+        <li>ASP.net Core</li>
+        <li>Batch (Windows)</li>
+        <li>C++</li>
+        <li>C#  </li>
+        <li>CSS</li>
+        <li>Git</li>
+        <li>Html</li>
+        <li>java</li>
+        <li>javascript</li>
+        <li>JSON</li>
+        <li>JQuery</li>
+        <li>MVC</li>
+        <li>MVVM</li>
+        <li>Photoshop</li>
+        <li>SQL server</li>
+        <li>WPF</li>
+    </ul>
+</div>
+
+
+<!--project and contact banner-->
+<div class="container">
+    <h1 class="title-header">Are you still here ? </h1>
+    <br/>
+    <a class="basic-rounded-link" href="/Projects" >projects</a>
+    <a class="basic-rounded-link" href="/ContactMe" >contact</a>
+</div>
+<br/>
+
+
+<!--@ include footer:! @-->   

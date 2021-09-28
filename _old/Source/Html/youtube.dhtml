@@ -1,0 +1,41 @@
+<!--@ output ../serverRoot/Views/Home/Youtube.cshtml:server @-->
+<!--@ output ../WebRoot/Youtube.html @-->
+<!--@ include header:! @-->
+
+<div class="container" >
+    <h1 class="title-header top">My Youtube channel: </h1>
+</div>
+
+<div class="container-inner">
+
+    <p>
+        Youtube has always been a big part
+        for me as I learned alot from it 
+        and went throw thousends of tutoril
+        minutes, and I wanted to give some
+        back!!
+        <br/>
+        What I noticed was a lack of arabic
+        content in some fields so I wanted 
+        to fill that lack thats why I 
+    created <a href="https://www.youtube.com/channel/UCxpRbXPXNZBy43i7FVIZZBg" class="link-base" >Test team!</a>.
+    </p>
+    <p>
+        I started a Test Team YouTube channel to help out in our University courses. The channel includes over 100 tutorial videos on different courses in different fields including Data structure, introduction to computer, Networking and many more. 
+    </p>
+    <p>
+        I did not do all of the tutorials
+        some of them were made by other 
+        classmates.
+    </p>
+    
+    <h1 class="mini-title-header">Playlist of mine: </h1>
+    <ul>
+        <li>Data structure-sides</li>
+        <li>Compilers</li>
+        <li>Computer introduction</li>
+        <li>Helper projects</li>
+    </ul>
+</div>
+
+<!--@ include footer:! @-->

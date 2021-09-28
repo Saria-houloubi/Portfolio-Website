@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Saria-houloubi</title>
+        <link href="/Assets/Images/Icons/favicon.ico" rel="shortcut icon"/>
+        <link href="/Assets/Css/style.css" rel="stylesheet" type="text/css" />
+        <script src="/Assets/Js/_custom.bubles.js"></script>
+    </head>
+    <body>
+    <nav class="top-nav-bar container">
+        <div onclick="togglenavBar()" >
+            <img src="/Assets/Images/Icons/more.svg" alt="more-icon" >
+        </div>
+        
+        <ul id="nav-links">
+            <li><a href="/about">about</a></li>
+            <li><a href="/work">work</a></li>
+            <li><a href="/projects">projects</a></li>
+            <li><a href="/youtube">youtube</a></li>
+            <li><a href="/contactMe">contact</a></li>
+            <li><a href="https://github.com/Saria-houloubi"><img src="/Assets/Images/Icons/github.svg" alt="github-icon"></a></li>
+            <li><a href="https://www.linkedin.com/in/saria-houloubi-540b30114/"><img src="/Assets/Images/Icons/linkedin.svg" alt="linkedIn-icon"></a></li>
+            <li><a href="https://www.facebook.com/saria.houloubi.5"><img src="/Assets/Images/Icons/facebook.svg" alt="facebook-icon"></a></li>
+        </ul>
+</nav>
+
+<script>
+    //toggle the side menu
+    function togglenavBar(e){
+        var element =document.getElementById('nav-links');  
+        element.classList.toggle('expanded')
+    }
+</script>
+
+    <div class="bubble-effect" data-bubles-density='0.5'></div>
+
+                
+
+
+    <div class="container" >
+        <h1 class="title-header top">Contact Me<br/>
+        ask me anything... almost</h1>
+
+        <h1 class="title-header-bright">My name is Saria Houloubi Send me an Email at <span class="c1">Houloubis@gmail.com</span></h1>
+</div>
+
+    <footer> 
+        <div class="container">
+            <p>Copyright © 2019. <a href="/index" class="link-base" >Saria houloubi.</a></p>
+        </div>
+    </footer>
+    </body>
+</html>
