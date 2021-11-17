@@ -1,0 +1,10 @@
+{
+  "files": [ "ClientScripts/app.ts" ],
+  "compileOnSave": true,
+  "compilerOptions": {
+    "allowJs": true,
+    "alwaysStrict": true,
+    "checkJs": true,
+    "outFile": "wwwroot/js/app.js"
+  }
+}
