@@ -1,3 +1,6 @@
+using Portfolio.Core.Abstractions;
+using Portfolio.Web.Middlewares;
+using Portfolio.Web.Services;
 using Portfolio.Web.Setup;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -5,6 +8,11 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
+
+//Custome services
+builder.Services.AddScoped<ICurrentUserState, DefaultCurrentUserState>();
+builder.Services.AddSingleton<IDateTimeProvider, UtcDateTimeProvider>();
+
 builder.Services.RegisterSolutionServices(builder.Configuration);
 
 var app = builder.Build();
@@ -20,6 +28,9 @@ if (!app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseStaticFiles();
+
+//Custome middle wares
+app.UseCheckLanguage();
 
 app.UseRouting();
 

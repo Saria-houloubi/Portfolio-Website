@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -17,7 +17,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Portfolio.Core.Abstractions\Portfolio.Core.Abstractions.csproj" />
     <ProjectReference Include="..\Portfolio.Shared.Extensions\Portfolio.Shared.Extensions.csproj" />
+    <ProjectReference Include="..\Portfolio.Web\Portfolio.Web.csproj" />
   </ItemGroup>
 
 </Project>

@@ -14,16 +14,12 @@ namespace Portfolio.Localization
         {
             if (configuration is not null)
             {
-                var options = new JsonFIleAppLocalizerOptions();
-
-                var _configSections = configuration.GetSection(JsonFIleAppLocalizerOptions.ConfigurationPath);
-
-                options.FilePath = _configSections.GetSection(nameof(JsonFIleAppLocalizerOptions.FilePath)).Value;
+                var options = new AppSettingsAppLocalizerOptions();
 
                 serviceCollection.AddSingleton(options);
             }
-            
-            serviceCollection.AddScoped<IAppLocalizer, JsonFileAppLocalizer>();
+
+            serviceCollection.AddScoped<IAppLocalizer, AppSettingdAppLocalizer>();
         }
     }
 }

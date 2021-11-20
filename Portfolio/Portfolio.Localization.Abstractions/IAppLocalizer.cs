@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Portfolio.Localization.Abstractions
+﻿namespace Portfolio.Localization.Abstractions
 {
     /// <summary>
     /// Localize and centrilize values
@@ -33,6 +27,6 @@ namespace Portfolio.Localization.Abstractions
         /// </summary>
         /// <param name="hardreload">Forces a reload of the data</param>
         /// <returns>True if the load was succesfull false otherwise</returns>
-        public ValueTask<bool> EnsureDataIsLoadedAsync(bool hardreload =false);
+        public bool EnsureDataIsLoaded(bool hardreload =false);
     }
 }

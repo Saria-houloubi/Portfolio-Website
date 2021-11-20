@@ -1,20 +1,21 @@
-﻿using Portfolio.Localization.Abstractions;
+﻿using Microsoft.Extensions.Configuration;
+using Portfolio.Core.Abstractions;
+using Portfolio.Localization.Abstractions;
 using System.Collections.Concurrent;
-using System.Text.Json;
 
 namespace Portfolio.Localization
 {
     /// <summary>
-    /// Gets the data based on Json file from configuration
+    /// Gets the data based on AppSettings
     /// </summary>
-    internal class JsonFileAppLocalizer : IAppLocalizer
+    internal class AppSettingdAppLocalizer : IAppLocalizer
     {
 
         #region Properties
         /// <summary>
         /// Options required for the app to run
         /// </summary>
-        public JsonFIleAppLocalizerOptions Options { get; private set; }
+        public AppSettingsAppLocalizerOptions Options { get; private set; }
 
         /// <summary>
         /// The dictionary to hold all localized keys
@@ -27,6 +28,15 @@ namespace Portfolio.Localization
         /// Semaphore used to make sure that data is not being loaded using multiple threads
         /// </summary>
         static readonly SemaphoreSlim _semaphoreSlim = new(1, 1);
+
+        /// <summary>
+        /// The configuration to be injected for reading from
+        /// </summary>
+        private readonly IConfiguration _configuration;
+        /// <summary>
+        /// Gets data on the current user connected
+        /// </summary>
+        private readonly ICurrentUserState _currentUser;
         #endregion
 
         #region Constructer
@@ -34,10 +44,13 @@ namespace Portfolio.Localization
         /// Default constructer
         /// </summary>
         /// <param name="options">Options and configuration required to run</param>
-        /// <exception cref="ArgumentNullException">Throws exception the sent options are null</exception>
-        public JsonFileAppLocalizer(JsonFIleAppLocalizerOptions options)
+        /// <param name="configuration">The configuration to get localized values from based on <see cref="AppSettingsAppLocalizerOptions.ConfigurationPath"/> oath</param>
+        /// <exception cref="ArgumentNullException">Throws exception the sent options or configuration or Icurrentuser is null</exception>
+        public AppSettingdAppLocalizer(AppSettingsAppLocalizerOptions options, IConfiguration configuration, ICurrentUserState currentUser)
         {
             Options = options ?? throw new ArgumentNullException(nameof(options));
+            _configuration = configuration ?? throw new ArgumentNullException(nameof(configuration));
+            _currentUser = currentUser ?? throw new ArgumentNullException(nameof(currentUser));
         }
         #endregion
 
@@ -57,7 +70,7 @@ namespace Portfolio.Localization
                 //If the data was not yet loaded or there is no values
                 if (_localizedKeys is null || !_localizedKeys.Any())
                     //Wait until it gets loaded
-                    EnsureDataIsLoadedAsync().AsTask().Wait();
+                    _ = EnsureDataIsLoaded();
 
                 if (_localizedKeys is not null)
                 {
@@ -74,7 +87,7 @@ namespace Portfolio.Localization
             }
         }
 
-        public string CurrentLang => "_";
+        public string CurrentLang => _currentUser.Language ?? "_";
 
         #region Helpers
         /// <summary>
@@ -83,7 +96,7 @@ namespace Portfolio.Localization
         /// <returns></returns>
         /// <exception cref="FileNotFoundException">if the file in options.FilePath is not found</exception>
         /// <exception cref="ArgumentNullException">if we could correctly read data from file in options.Filepath</exception>
-        public async ValueTask<bool> EnsureDataIsLoadedAsync(bool hardreload = false)
+        public bool EnsureDataIsLoaded(bool hardreload = false)
         {
             try
             {
@@ -94,28 +107,30 @@ namespace Portfolio.Localization
                 if (!hardreload && _localizedKeys is not null && _localizedKeys.Any())
                     return true;
 
-                //Check for the file if found
-                if (!File.Exists(Options.FilePath))
-                    throw new FileNotFoundException(Options.FilePath);
+                var section = _configuration.GetSection(AppSettingsAppLocalizerOptions.ConfigurationPath);
 
-                var text = await File.ReadAllTextAsync(Options.FilePath);
+                if (!section.Exists())
+                    throw new Exception($"Unable to find section {AppSettingsAppLocalizerOptions.ConfigurationPath}");
 
-                if (text == null)
-                    throw new ArgumentNullException($"Empty file in {Options.FilePath}, could not resolve any data");
-
-                var _loadedData = JsonSerializer.Deserialize<Dictionary<string, IEnumerable<KeyValuePair<string, string>>>>(text);
-
-                if (_loadedData == null)
-                    throw new ArgumentNullException($"Could not desrialize or fetch andy data from {Options.FilePath}");
+                var _loadedData = section.AsEnumerable(true);
 
                 _localizedKeys = new ConcurrentDictionary<string, string>();
 
-
                 //Add the items to dictionary
-                foreach (var lang in _loadedData)
+                foreach (var k in _loadedData)
                 {
-                    foreach (var key in lang.Value)
-                        _localizedKeys.Add($"{lang.Key}.{key.Key}", key.Value);
+                    //Skip any null values
+                    if (k.Value is null)
+                        continue;
+
+                    var dicKey = k.Key.Replace(':', '.');
+
+                    //Check if the key is already added
+                    if (!_localizedKeys.ContainsKey(dicKey))
+                        _localizedKeys.Add(dicKey, k.Value);
+                    else
+                        //Throw early excption to break and check
+                        throw new Exception($"Duplicate key found {dicKey}");
                 }
 
                 //Return true if we were able to load any data
