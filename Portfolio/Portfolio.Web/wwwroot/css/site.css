@@ -2,6 +2,7 @@
     --main-bg-color: black;
     --main-fg-light-color: white;
     --main-fg-dark-color: #510101;
+    --main-fg-lightdark-color: #FA0505;
     --font-weight-s: 14px;
     --font-weight-m: 16px;
     --font-weight-l: 20px;
@@ -15,38 +16,41 @@ body {
     font-family: var(--font-family-text);
     height: 100%;
     color: var(--main-fg-light-color);
-    background-color: var(--main-bg-color);
+    background-color: transparent;
     font-size: var(--font-weight-m);
     padding: 0;
     margin: 0;
 }
 
-body {
-    display: flex;
-    flex-direction: column;
-    padding: 0px 40px;
-}
+    body .page-content {
+        display: flex;
+        height: 100%;
+        flex-direction: column;
+        padding: 0px 40px;
+    }
 
 
 main {
-    flex-grow:1;
+    flex-grow: 1;
 }
 
 .header-main-text {
     height: 100%;
     display: flex;
-    text-align:center;
-    line-height:40px;
+    text-align: center;
+    line-height: 40px;
     align-items: center;
-    font-size:var(--font-weight-xl) !important;
+    font-size: var(--font-weight-xl) !important;
     justify-content: center;
 }
+
 .break-flex {
     flex-basis: 100%;
     height: 0;
 }
+
 header {
-    height:5vh;
+    height: 5vh;
     padding: 20px 0px;
     display: flex;
     text-align: center;
@@ -57,7 +61,6 @@ header {
     header .nav-brand {
         font-size: var(--font-weight-xl);
         font-weight: bold;
-        padding-bottom: 10px;
     }
 
 .b-bottom {
@@ -100,10 +103,15 @@ a {
         color: var(--main-fg-dark-color) !important;
     }
 
-footer {
-    padding: 10px 0px;
+.center{
     justify-content: center;
     display: flex;
+}
+.bottom-nav{
+    display:none !important;
+}
+footer {
+    padding: 10px 0px;
 }
 
     footer ul {
@@ -138,20 +146,51 @@ footer {
         header ul {
             display: none;
         }
+
+    .bottom-nav {
+        display: flex !important;
+    }
 }
 
+#animated_bg_shapes {
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    background-color: var(--main-bg-color);
+    z-index: -1;
+}
+    #animated_bg_shapes span {
+        position: absolute;
+        animation-name: slide;
+        animation-duration: 120s;
+        animation-iteration-count: infinite;
+        animation-timing-function: ease-in-out;
+        background-color: var(--main-fg-dark-color);
+    }
 
 
+@keyframes slide {
+    0% {
+        transform: translateX(0);
+    }
+
+    50% {
+        transform: translateX(2000%);
+    }
+
+    100% {
+        transform: translateX(-200);
+    }
+}
 
 @font-face {
     font-family: 'icomoon';
-    src: url('../fonts/icomoon.eot?gt5az9');
-    src: url('../fonts/icomoon.eot?gt5az9#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?gt5az9') format('truetype'), url('../fonts/icomoon.woff?gt5az9') format('woff'), url('../fonts/icomoon.svg?gt5az9#icomoon') format('svg');
+    src: url('../fonts/icomoon.eot?93wn0z');
+    src: url('../fonts/icomoon.eot?93wn0z#iefix') format('embedded-opentype'), url('../fonts/icomoon.ttf?93wn0z') format('truetype'), url('../fonts/icomoon.woff?93wn0z') format('woff'), url('../fonts/icomoon.svg?93wn0z#icomoon') format('svg');
     font-weight: normal;
     font-style: normal;
     font-display: block;
 }
-
 [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;
@@ -178,12 +217,32 @@ footer {
     content: "\e901";
 }
 
+.icon-home:before {
+    content: "\e902";
+}
+
 .icon-quill:before {
     content: "\e907";
 }
 
+.icon-profile:before {
+    content: "\e923";
+}
+
+.icon-bubbles4:before {
+    content: "\e970";
+}
+
+.icon-hammer:before {
+    content: "\e996";
+}
+
 .icon-sad2:before {
     content: "\e9e6";
+}
+
+.icon-hipster:before {
+    content: "\e9f9";
 }
 
 .icon-facebook2:before {
