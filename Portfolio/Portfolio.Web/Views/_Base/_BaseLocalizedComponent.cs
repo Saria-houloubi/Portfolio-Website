@@ -2,7 +2,7 @@
 using Portfolio.Localization.Abstractions;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Portfolio.Web.Pages._Base
+namespace Portfolio.Web.Views._Base
 {
     /// <summary>
     /// A base localized component that allows access to <see cref="IAppLocalizer"/>

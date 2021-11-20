@@ -6,7 +6,10 @@ using Portfolio.Web.Setup;
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddRazorPages();
+builder.Services.AddRazorPages(options =>
+{
+    options.RootDirectory = "/Views/Pages";
+});
 builder.Services.AddServerSideBlazor();
 
 //Custome services
