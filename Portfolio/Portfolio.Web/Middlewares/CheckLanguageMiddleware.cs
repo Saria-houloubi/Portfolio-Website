@@ -35,7 +35,7 @@ namespace Portfolio.Web.Middlewares
             //Try to get the language from cookie
             if (context.Request.Cookies.TryGetValue(_langCookieKey, out var _lang))
             {
-                curerntUser.Language = _lang ?? "_";
+                curerntUser.Language = _lang ?? "en";
             }
             else
             {

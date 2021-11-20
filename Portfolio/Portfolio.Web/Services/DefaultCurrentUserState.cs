@@ -11,7 +11,7 @@ namespace Portfolio.Web.Services
         /// <summary>
         /// Get what is the current language prefered for user
         /// </summary>
-        string ICurrentUserState.Language { get; set; } = "_"; //Defaults to none;
+        string ICurrentUserState.Language { get; set; } = "en"; //Defaults to english;
         #endregion
     }
 }

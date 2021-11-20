@@ -1,0 +1,21 @@
+﻿@inherits _BaseLocalizedComponent
+@inject IDateTimeProvider _dateTimeProvider
+<footer class="b-top">
+    <ul>
+        <li>
+            <span><span class="icon-copyright"></span> <span>@_dateTimeProvider.Now.Year</span></span>
+        </li>
+        <li>
+            <a><span class="icon-quill"></span></a>
+        </li>
+        <li>
+            <a><span class="icon-facebook2"></span></a>
+        </li>
+        <li>
+            <a><span class="icon-github-square"></span></a>
+        </li>
+        <li>
+            <a><span class="icon-linkedin"></span></a>
+        </li>
+    </ul>
+</footer>

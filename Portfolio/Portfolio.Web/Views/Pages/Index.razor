@@ -1,6 +1,14 @@
-﻿@page "/"
+﻿@page "/home"
+@page "/"
 @inherits _BaseLocalizedComponent;
 
-<PageTitle>Index</PageTitle>
+<PageTitle>@_l("pages.index.title")</PageTitle>
 
-<h1>@_l("index.title")</h1>
+<div class="header-main-text">
+    <p>
+        @_l("pages.index.welecometext_p1")
+        <br />
+        @_l("pages.index.welecometext_p2")
+    </p>
+</div>
+

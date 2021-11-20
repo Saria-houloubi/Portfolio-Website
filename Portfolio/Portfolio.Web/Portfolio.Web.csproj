@@ -25,6 +25,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="wwwroot\fonts\icomoon.svg" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\Portfolio.Core.Abstractions\Portfolio.Core.Abstractions.csproj" />
     <ProjectReference Include="..\Portfolio.Localization.Abstractions\Portfolio.Localization.Abstractions.csproj" />
     <ProjectReference Include="..\Portfolio.Shared.Extensions\Portfolio.Shared.Extensions.csproj" />
