@@ -103,19 +103,27 @@ a {
         color: var(--main-fg-dark-color) !important;
     }
 
-.center{
+.center {
     justify-content: center;
     display: flex;
 }
-.bottom-nav{
-    display:none !important;
+
+.bottom-nav {
+    display: none !important;
 }
+
+    .bottom-nav ul {
+        padding: 0px;
+    }
+
 footer {
+    margin: 0px !important;
     padding: 10px 0px;
 }
 
     footer ul {
         display: flex;
+        padding: 0px;
         list-style-type: none;
     }
 
@@ -133,10 +141,10 @@ footer {
 
 @media only screen and (max-width: 750px) {
     :root {
-        --font-weight-s: 10px;
-        --font-weight-m: 12px;
-        --font-weight-l: 14px;
-        --font-weight-xl: 16px;
+        --font-weight-s: 13px;
+        --font-weight-m: 16px;
+        --font-weight-l: 18px;
+        --font-weight-xl: 20px;
     }
 
     header {
@@ -159,6 +167,7 @@ footer {
     background-color: var(--main-bg-color);
     z-index: -1;
 }
+
     #animated_bg_shapes span {
         position: absolute;
         animation-name: slide;
@@ -191,6 +200,7 @@ footer {
     font-style: normal;
     font-display: block;
 }
+
 [class^="icon-"], [class*=" icon-"] {
     /* use !important to prevent issues with browser extensions that change fonts */
     font-family: 'icomoon' !important;

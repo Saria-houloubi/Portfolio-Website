@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 // Add services to the container.
 builder.Services.AddRazorPages(options =>
 {
-    options.RootDirectory = "/Views/Pages";
+        options.RootDirectory = "/Views/Pages";
 });
 builder.Services.AddServerSideBlazor();
 
