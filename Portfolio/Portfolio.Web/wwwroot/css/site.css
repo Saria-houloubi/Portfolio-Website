@@ -63,6 +63,15 @@ header {
         font-weight: bold;
     }
 
+
+/*
+    NonBootstrap helper classe
+    ********************************************
+*/
+.b-full {
+    border: 2px solid var(--main-fg-dark-color);
+}
+
 .b-bottom {
     border-bottom: 2px solid var(--main-fg-dark-color);
 }
@@ -71,6 +80,65 @@ header {
     border-top: 2px solid var(--main-fg-light-color);
 }
 
+.d-none {
+    display: none !important;
+}
+
+.m-3 {
+    margin: 20px;
+}
+
+.m-2 {
+    margin: 10px;
+}
+
+.border-round-1 {
+    border: 2px solid var(--main-fg-dark-color);
+    border-radius: 15px;
+}
+.justify-left{
+    justify-content: right !important;
+}
+/*
+    Horizantel list
+*/
+.h-list {
+    overflow: hidden;
+    list-style-type: none;
+}
+
+    .h-list li {
+        text-decoration: none;
+        display: inline-block;
+        margin: 0px 5px;
+    }
+
+.color-dark {
+    color: var(--main-fg-dark-color) !important;
+}
+
+.p-0 {
+    padding: 0px !important;
+}
+
+.d-inlineblock {
+    display: inline-block !important;
+}
+
+.d-flex {
+    display: flex !important;
+}
+
+.text-center {
+    text-align: center !important;
+}
+
+.w-50 {
+    width: 50% !important;
+}
+/*
+    ********************************************
+*/
 nav ul {
     text-align: center;
     display: flex;
@@ -138,6 +206,45 @@ footer {
 
 
 
+.pcf-focused {
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+}
+
+    .pcf-focused .pcf-side-info-title {
+        background: var(--main-fg-dark-color);
+    }
+
+    .pcf-focused .pcf-side-info {
+        width: 18%;
+        display: inline-block;
+    }
+
+    .pcf-focused .pcf-side-info-title {
+        color: var(--main-fg-light-color) !important;
+        background: var(--main-fg-dark-color);
+        padding: 30px 0px;
+        font-size: var(--font-weight-l);
+        text-align: center;
+    }
+
+    .pcf-focused nav ul li a {
+        color: var(--main-bg-color) !important;
+    }
+
+    .pcf-focused .pcf-side-info nav ul {
+        text-align: left;
+    }
+
+    .pcf-focused .pcf-description {
+        width: 80%;
+        display: inline-block;
+        font-size: var(--font-weight-l);
+        vertical-align: top;
+    }
+
+
 
 @media only screen and (max-width: 750px) {
     :root {
@@ -158,6 +265,52 @@ footer {
     .bottom-nav {
         display: flex !important;
     }
+
+    .pcf-focused {
+        width: 100%;
+        display: flex;
+        padding: 0;
+    }
+
+        .pcf-focused .pcf-description {
+            width: 100%;
+            padding: 10px;
+            display: block;
+        }
+    /*
+    NonBootstrap helper classe for mobile view
+    ********************************************
+    */
+    .d-show-m {
+        display: block !important;
+    }
+
+    .d-hide-m {
+        display: none !important;
+    }
+
+    .m-3 {
+        margin: 10px;
+    }
+
+    .w-100-m {
+        width: 100% !important;
+    }
+
+    .d-block-m {
+        display: block !important;
+    }
+    .m-2 {
+        margin: 5px;
+    }
+    .my-3-m {
+        margin: 10px 0px !important;
+    }
+
+    /*
+    ********************************************
+    */
+
 }
 
 #animated_bg_shapes {

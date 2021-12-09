@@ -1,0 +1,86 @@
+﻿@inherits _BaseLocalizedComponent
+@if (Project is not null)
+{
+
+    <div class="pcf-focused  border-round-1">
+        <div class="pcf-side-info d-hide-m">
+            <div class="pcf-side-info-title header-txt">
+                @Project.Title
+            </div>
+            <p>
+                @Project.ShortDescription
+            </p>
+            <hr />
+            <p>
+                @Project.StartYear
+            </p>
+            <hr />
+            <p>
+                @if (Project.Tags is not null)
+                    foreach (var tag in Project.Tags)
+                    {
+                        @string.Format("{0} ", tag)
+                    }
+
+            </p>
+            <hr />
+                <ul class="h-list p-0">
+                    @if (Project.RawLinks is not null)
+                        foreach (var rawLink in Project.RawLinks)
+                        {
+                            <li class="color-dark">
+                                @this.RenderRawHtml(@rawLink)
+                            </li>
+                        }
+                </ul>
+        </div>
+        <div class="pcf-description">
+            <div class="pcf-description-title d-hide-m header-txt">
+                @_l("txt.description")
+            </div>
+            <div class="d-show-m d-none">
+                <p>@Project.Title <span>@Project.StartYear</span></p>
+                <hr />
+                <p>@Project.ShortDescription</p>
+            </div>
+
+
+            <hr />
+            <p>
+                @this.RenderRawHtml(@Project.FullDescription)
+            </p>
+
+            <div class="d-show-m d-none">
+                <hr />
+                <p>
+                    @if (Project.Tags is not null)
+                        foreach (var tag in Project.Tags)
+                        {
+                            @string.Format("{0} ", tag)
+                        }
+
+                </p>
+                <hr />
+                <ul class="h-list p-0">
+                    @if (Project.RawLinks is not null)
+                        foreach (var rawLink in Project.RawLinks)
+                        {
+                            <li class="color-dark ">
+                                @this.RenderRawHtml(@rawLink)
+                            </li>
+                        }
+                </ul>
+            </div>
+        </div>
+    </div>
+}
+else
+{
+    <NotFoundView ErrorKey="projects.notfound.warnning" />
+}
+
+
+@code {
+    [Parameter] public ProjectModel Project { get; set; }
+}
+

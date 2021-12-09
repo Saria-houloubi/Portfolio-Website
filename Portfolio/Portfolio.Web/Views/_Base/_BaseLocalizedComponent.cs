@@ -10,7 +10,7 @@ namespace Portfolio.Web.Views._Base
     public abstract class _BaseLocalizedComponent : ComponentBase
     {
         #region Properties
-        [MaybeNull] [Inject] protected IAppLocalizer? _al { get; private set; }
+        [MaybeNull] [Inject] private IAppLocalizer? _al { get; set; }
         #endregion
 
         #region Helpers

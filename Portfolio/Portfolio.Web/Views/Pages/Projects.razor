@@ -1,0 +1,39 @@
+﻿@page "/projects"
+@page "/projects/{SelectedProjectTitle}"
+@inherits _BaseLocalizedComponent;
+
+<PageTitle>@_l("pages.projects.title")</PageTitle>
+
+<ProjectFocusedCard Project=_selectedProject />
+
+<hr />
+
+@if (ProjectList is not null)
+{
+    <div class="d-flex text-center d-block-m">
+        @foreach (var p in ProjectList)
+        {
+            <ProjectCard Project=p />
+        }
+    </div>
+}
+@code {
+
+    #region Properties
+
+    [Parameter] public string SelectedProjectTitle { get; set; }
+    [Inject] public IEnumerable<ProjectModel> ProjectList { get; private set; }
+    private ProjectModel _selectedProject;
+    #endregion
+
+    protected override void OnInitialized()
+    {
+        if (!string.IsNullOrEmpty(SelectedProjectTitle))
+            _selectedProject = ProjectList?.FirstOrDefault(p => p.Title == SelectedProjectTitle);
+        else
+            _selectedProject ??= ProjectList?.FirstOrDefault();
+
+        base.OnInitialized();
+    }
+
+}

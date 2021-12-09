@@ -16,6 +16,7 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<ICurrentUserState, DefaultCurrentUserState>();
 builder.Services.AddSingleton<IDateTimeProvider, UtcDateTimeProvider>();
 
+builder.Services.Data_RegisterProjectsFromConfig(builder.Configuration);
 builder.Services.RegisterSolutionServices(builder.Configuration);
 
 var app = builder.Build();

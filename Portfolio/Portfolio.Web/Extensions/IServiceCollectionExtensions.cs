@@ -2,6 +2,7 @@
 using System.Reflection;
 using Portfolio.Core.Abstractions;
 using Portfolio.Shared.Extensions;
+using Portfolio.Web.Models;
 
 namespace Portfolio.Web.Setup
 {
@@ -57,6 +58,37 @@ namespace Portfolio.Web.Setup
             {
                 register?.RegisterServices(serviceCollection, configuration);
             }
+        }
+        /// <summary>
+        /// Shortcut to regisert an IEnumrable of <see cref="ProjectModel"/>
+        /// </summary>
+        /// <param name="services"></param>
+        /// <param name="configuration">the configuration to read from</param>
+        /// <param name="keyPath">The key path in confiuguration to read values in</param>
+        public static void Data_RegisterProjectsFromConfig(this IServiceCollection services, IConfiguration configuration, string keyPath = "Me:Projects")
+        {
+            if (services is null)
+            {
+                throw new ArgumentNullException(nameof(services));
+            }
+
+            if (configuration is null)
+            {
+                throw new ArgumentNullException(nameof(configuration));
+            }
+
+            if (string.IsNullOrEmpty(keyPath))
+            {
+                throw new ArgumentException($"'{nameof(keyPath)}' cannot be null or empty.", nameof(keyPath));
+            }
+
+            var projects = new List<ProjectModel>();
+
+            //Read the configuration values
+            configuration.Bind(keyPath, projects);
+
+            //Add it in the injection kernel
+            services.AddSingleton<IEnumerable<ProjectModel>>(projects);
         }
     }
 }

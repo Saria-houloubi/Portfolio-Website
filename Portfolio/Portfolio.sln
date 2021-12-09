@@ -17,13 +17,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Core.Abstractions
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Shared", "Shared", "{2155F790-F005-4390-9AC5-C6A11016D4EE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Shared.Extensions", "Portfolio.Shared.Extensions\Portfolio.Shared.Extensions.csproj", "{816290AE-47FC-49E9-81B6-1B6ED2280F87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Shared.Extensions", "Portfolio.Shared.Extensions\Portfolio.Shared.Extensions.csproj", "{816290AE-47FC-49E9-81B6-1B6ED2280F87}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Localization", "Portfolio.Localization\Portfolio.Localization.csproj", "{6C756E05-45D2-48B4-809C-E310ECD3F8FD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Localization", "Portfolio.Localization\Portfolio.Localization.csproj", "{6C756E05-45D2-48B4-809C-E310ECD3F8FD}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{8F612C26-2FBD-493C-A181-492CAA7CC319}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Portfolio.Tests", "Portfolio.Tests\Portfolio.Tests.csproj", "{171878DB-8D90-4CC2-97F5-44B73537708E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Portfolio.Tests", "Portfolio.Tests\Portfolio.Tests.csproj", "{171878DB-8D90-4CC2-97F5-44B73537708E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
