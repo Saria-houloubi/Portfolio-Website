@@ -13,7 +13,8 @@
     <div class="d-flex text-center d-block-m">
         @foreach (var p in ProjectList)
         {
-            <ProjectCard Project=p />
+            var isSelectted = string.Compare(p.Title, _selectedProject.Title, false) == 0;
+            <ProjectCard Project=p IsSelected=isSelectted />
         }
     </div>
 }
@@ -26,12 +27,18 @@
     private ProjectModel _selectedProject;
     #endregion
 
-    protected override void OnInitialized()
+    protected override void OnParametersSet()
     {
         if (!string.IsNullOrEmpty(SelectedProjectTitle))
             _selectedProject = ProjectList?.FirstOrDefault(p => p.Title == SelectedProjectTitle);
-        else
-            _selectedProject ??= ProjectList?.FirstOrDefault();
+
+        base.OnParametersSet();
+    }
+
+    protected override void OnInitialized()
+    {
+        if (_selectedProject is null)
+        _selectedProject ??= ProjectList?.FirstOrDefault();
 
         base.OnInitialized();
     }

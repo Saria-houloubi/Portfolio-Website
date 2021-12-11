@@ -2,9 +2,12 @@
 @if (Project is not null)
 {
     <div class="b-full m-3 w-100-m w-50 border-round-1 my-3-m">
-        <div>
-            <span>@_l("txt.reading")    </span>
-        </div>
+        @if (IsSelected)
+        {
+            <div class="m-3">
+                <span>@_l("txt.reading")    </span>
+            </div>
+        }
         <p>
             @Project.Title <span>@Project.StartYear</span>
         </p>
@@ -20,10 +23,12 @@
                     @string.Format("{0} ", tag)
                 }
         </p>
-
-        <div class="m-2 d-flex justify-left">
-            <button>@_l("txt.select")</button>
-        </div>
+        @if (!IsSelected)
+        {
+            <div class="m-2 d-flex justify-left">
+                <a href="@string.Format("{0}/{1}",PageRoutes.Projects,Project.Title)" title=@_l("txt.select")>@_l("txt.select")</a>
+            </div>
+        }
     </div>
 }
 else
@@ -36,6 +41,5 @@ else
     [Parameter] public ProjectModel Project { get; set; }
     [Parameter] public bool IsSelected { get; set; }
 
-    
 }
 
