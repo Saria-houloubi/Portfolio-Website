@@ -1,0 +1,17 @@
+<svg width="25.000000000000004" height="32" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+ <defs>
+  <path d="m0,0.245l14.561,0l0,29.001l-14.561,0l0,-29.001z" id="prefix__a"/>
+ </defs>
+ <g>
+  <title>Layer 1</title>
+  <g stroke="null" id="svg_1" fill-rule="evenodd" fill="none">
+   <g stroke="null" id="svg_3">
+    <mask stroke="null" fill="#fff" id="prefix__b">
+     <use stroke="null" id="svg_4" xlink:href="#prefix__a"/>
+    </mask>
+    <path stroke="null" id="svg_5" mask="url(#prefix__b)" d="m14.561,5.896l0,-4.97c0,-0.575 -0.465,-0.824 -1.04,-0.556l-12.481,5.892c-0.575,0.268 -1.04,0.952 -1.04,1.526l0,20.812c0,0.575 0.466,0.824 1.04,0.556l13.521,-6.378l0,-0.011l-4.621,2.192l0,-11.437l-2.542,1.271l0,-5.546l7.164,-3.351l-0.001,0z" fill="#4061AC"/>
+   </g>
+   <path stroke="null" id="svg_6" d="m20.944,2.886l-7.707,3.629l1.324,-0.62l0,16.872l-4.621,2.186l0,-11.43l-2.53,1.264l0,16.305c0,0.575 0.467,0.823 1.042,0.555l12.493,-5.887c0.575,-0.268 1.042,-0.95 1.042,-1.525l0,-20.794c0,-0.574 -0.467,-0.822 -1.042,-0.555" fill="#14AFE2"/>
+  </g>
+ </g>
+</svg>

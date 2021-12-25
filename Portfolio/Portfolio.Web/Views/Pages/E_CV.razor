@@ -1,0 +1,75 @@
+﻿@page "/ecv"
+@page "/e-cv"
+@page "/e_cv"
+@inherits _BaseLocalizedComponent;
+
+<PageTitle>@_l("pages.e_cv.title")</PageTitle>
+
+
+<div class="center">
+    <button>@_l("txt.donwloadpdf")</button>
+</div>
+
+<div class="h-100 m-0 border-round-1 d-flex">
+
+    <div class="d-flex-70 m-3 ">
+        <div class="d-flex">
+            <div class="w-50">
+                <span>Title : </span> <span>Software Engineer</span>
+                <hr />
+                <span>Joined : </span> <span>March 01 2020</span>
+                <hr />
+                <span>Left : </span> <span>Present</span>
+                <hr />
+            </div>
+
+            <p class="w-50">
+            #DotNet #React #DevOps #Blazor #CSharp #Telecomnication  #GoogleAds
+        </p>
+
+        </div>
+        <span class="header-txt">Responsibilities : </span>
+        <p>
+            • Responsible for integrating, improving and tech communication with partners.
+            <br />
+            • Configuration and connecting to the cloud using Azure from Pipeline creating in
+            DevOps to configuring application to work with many Azure services such as Log analytics, App insights..
+            <br />
+            • Helped to integrate with many of Googles Advertisement platforms.
+            <br />
+            • Lead developer on many company web services for faster and easier consumption.
+            <br />
+            • Centralized VOD services server with speed up to 70% more and better efficiency.
+            <br />
+            • Front End development company web-based services.
+            <br />
+            • Architecture design for many projects in aim for better usability and abstraction
+        </p>
+    </div>
+
+    <div class="d-flex-30 m-0 border-round-1 bk-firstscreen">
+        <div class="m-3 text-center d-flex d-flex-column">
+            <span class=" header-txt">FirstScreen</span>
+            <br />
+            <div class="d-flex-70">
+                <img src="images/svg.svg" />
+            </div>
+            <span class="d-block">Dubai , UAE</span>
+            <br />
+            <ul class="h-list p-0">
+                <li>
+                    <a title="@_l("txt.blog")"><span class="icon-quill"></span></a>
+                </li>
+                <li>
+                    <a title="@_l("txt.facebookpage")"><span class="icon-facebook2"></span></a>
+                </li>
+                <li>
+                    <a title="@_l("txt.githubpage")"><span class="icon-github-square"></span></a>
+                </li>
+                <li>
+                    <a title="@_l("txt.linkedinpage")"><span class="icon-linkedin"></span></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
