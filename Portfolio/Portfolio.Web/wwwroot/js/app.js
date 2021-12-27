@@ -34,7 +34,7 @@ function createShape(type, maxSizePx) {
             return createSquareSpan(maxSizePx);
         default:
     }
-    throw new Error("Type " + type + " is not found to create.");
+    throw new Error("Type ".concat(type, " is not found to create."));
 }
 /**
  * Creates a circle span
@@ -44,8 +44,8 @@ function createCircleSpan(maxSizePx) {
     var span = document.createElement("span");
     //set the size from a random value  1 to mazSize
     var size = getRandomBetween(1, maxSizePx);
-    span.style.width = size + "px";
-    span.style.height = size + "px";
+    span.style.width = "".concat(size, "px");
+    span.style.height = "".concat(size, "px");
     span.style.borderRadius = "50%";
     return span;
 }
@@ -60,10 +60,10 @@ function createTriangleSpan(maxSizePx) {
     var base = getRandomBetween(1, 4);
     span.style.width = "$0px";
     span.style.height = "$0px";
-    span.style.borderLeft = base === 1 ? size * 2 + "px solid  var(--main-fg-dark-color)" : size + "px solid transparent";
-    span.style.borderRight = base === 2 ? size * 2 + "px solid  var(--main-fg-dark-color)" : size + "px solid transparent";
-    span.style.borderBottom = base === 3 ? size * 2 + "px solid  var(--main-fg-dark-color)" : size + "px solid transparent";
-    span.style.borderTop = base === 4 ? size * 2 + "px solid  var(--main-fg-dark-color)" : size + "px solid transparent";
+    span.style.borderLeft = base === 1 ? "".concat(size * 2, "px solid  var(--main-fg-dark-color)") : "".concat(size, "px solid transparent");
+    span.style.borderRight = base === 2 ? "".concat(size * 2, "px solid  var(--main-fg-dark-color)") : "".concat(size, "px solid transparent");
+    span.style.borderBottom = base === 3 ? "".concat(size * 2, "px solid  var(--main-fg-dark-color)") : "".concat(size, "px solid transparent");
+    span.style.borderTop = base === 4 ? "".concat(size * 2, "px solid  var(--main-fg-dark-color)") : "".concat(size, "px solid transparent");
     span.style.backgroundColor = "transparent";
     return span;
 }
@@ -75,8 +75,8 @@ function createSquareSpan(maxSizePx) {
     var span = document.createElement("span");
     //set the size from a random value  1 to mazSize
     var size = getRandomBetween(1, maxSizePx);
-    span.style.width = size + "px";
-    span.style.height = size + "px";
+    span.style.width = "".concat(size, "px");
+    span.style.height = "".concat(size, "px");
     return span;
 }
 /**
