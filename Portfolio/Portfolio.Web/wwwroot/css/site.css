@@ -329,7 +329,7 @@ footer {
 
 
 @media only screen and (max-width: 750px) {
-    : root {
+    :root {
         --font-weight-s: 13px;
         --font-weight-m: 16px;
         --font-weight-l: 18px;
