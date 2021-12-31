@@ -7,6 +7,7 @@
     --font-weight-m: 16px;
     --font-weight-l: 20px;
     --font-weight-xl: 30px;
+    --font-weight-xxl: 40px;
     --font-family-text: "Consolas";
     --font-family-header: "OCR A";
 }
@@ -124,10 +125,18 @@ header {
     flex: 70% !important;
 }
 
+.d-flex-80 {
+    flex: 70% !important;
+}
 .d-flex-30 {
     flex: 30% !important;
 }
-
+.d-flex-10 {
+    flex: 10% !important;
+}
+.d-flex-auto{
+    flex:auto !important;
+}
 .d-flex-column {
     flex-flow: column !important;
 }
@@ -196,6 +205,9 @@ header {
 
 .h-100 {
     height: 100% !important;
+}
+.min-h-100 {
+    min-height: 100% !important;
 }
 .h-max-100{
     max-height: 100% !important;
@@ -334,6 +346,7 @@ footer {
         --font-weight-m: 16px;
         --font-weight-l: 18px;
         --font-weight-xl: 20px;
+        --font-weight-xxl: 30px;
     }
 
     header {
@@ -504,3 +517,89 @@ footer {
     content: "\eac9";
 }
 
+
+
+/**
+    Taken from https://www.sliderrevolution.com/resources/css-text-animation/
+    credit to developer:  Alvaro Montoro
+*/
+@keyframes showTopText {
+    0% {
+        transform: translate3d(0, 100%, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(0, 50%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes showBottomText {
+    0% {
+        transform: translate3d(0, -100%, 0);
+    }
+
+    100% {
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.animated-title {
+    color: var(--main-fg-light-color);
+    font-family: Roboto, Arial, sans-serif;
+    height: 90vmin;
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vmin;
+}
+
+    .animated-title > div {
+        font-size: var(--font-weight-xxl) !important;
+        height: 50%;
+        overflow: hidden;
+        position: absolute;
+        width: 100%;
+    }
+
+        .animated-title > div div {
+            padding: 2vmin 0;
+            position: absolute;
+        }
+
+            .animated-title > div div span {
+                display: block;
+            }
+
+        .animated-title > div.text-top {
+            border-bottom: 1vmin solid #000;
+            top: 0;
+        }
+
+            .animated-title > div.text-top div {
+                animation: showTopText 1s;
+                animation-delay: 0.5s;
+                animation-fill-mode: forwards;
+                bottom: 0;
+                transform: translate(0, 100%);
+            }
+
+                .animated-title > div.text-top div span:first-child {
+                    color: gray;
+                }
+
+        .animated-title > div.text-bottom {
+            bottom: 0;
+        }
+
+            .animated-title > div.text-bottom div {
+                animation: showBottomText 0.5s;
+                animation-delay: 1.75s;
+                animation-fill-mode: forwards;
+                top: 0;
+                transform: translate(0, -100%);
+            }
