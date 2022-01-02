@@ -6,71 +6,24 @@
 <PageTitle>@_l("pages.e_cv.title")</PageTitle>
 
 
-<div class="d-flex justify-right">
-    <button>@_l("txt.donwloadpdf")</button>
+<div class="d-flex justify-center ">
+    <button class="font-l ">@_l("txt.donwloadpdf")</button>
 </div>
 
-<div class="h-100 d-flex bg-firstscreen-second my-3">
-
-    <div class="d-flex-70 m-3 font-l font-m-m">
-        <div class="d-flex">
-            <div class="d-flex-70">
-                <div class="my-3 d-show-m">
-                    <span class=" header-txt ">FirstScreen</span>
-                    <span class="d-block">| Dubai , UAE</span>
-                </div>
-                <span>Title : </span> <span>Software Engineer</span>
-                <hr />
-                <span>Joined : </span> <span>March 01 2020</span>
-                <hr />
-                <span>Left : </span> <span>Present</span>
-                <hr />
-            </div>
-
-            <p class="d-flex-30 m-2 d-hide-m">
-                #DotNet #React #DevOps #Blazor #CSharp #Telecomnication  #GoogleAds
-            </p>
-
-        </div>
-        <span class="header-txt">Responsibilities : </span>
-        <p>
-            • Responsible for integrating, improving and tech communication with partners.
-            <br />
-            • Configuration and connecting to the cloud using Azure from Pipeline creating in
-            DevOps to configuring application to work with many Azure services such as Log analytics, App insights..
-            <br />
-            • Helped to integrate with many of Googles Advertisement platforms.
-            <br />
-            • Lead developer on many company web services for faster and easier consumption.
-            <br />
-            • Centralized VOD services server with speed up to 70% more and better efficiency.
-            <br />
-            • Front End development company web-based services.
-            <br />
-            • Architecture design for many projects in aim for better usability and abstraction
-        </p>
-    </div>
-
-    <div class="d-flex-30 m-0 bg-firstscreen-main  font-xl m-3 d-hide-m">
-        <div class="text-center d-flex d-flex-column h-100">
-            <span class=" header-txt ">FirstScreen</span>
-            <br />
-            <div class="d-flex-70 p-relative">
-                <img src="images/svg.svg " class="w-50 h-max-100 p-center" />
-            </div>
-            <span class="d-block">Dubai , UAE</span>
-            <br />
-            <ul class="h-list p-0">
-                <li>
-                    <a title="@_l("txt.website")"><span class="icon-sphere"></span></a>
-                </li>
-                <li>
-                    <a title="@_l("txt.facebookpage")"><span class="icon-facebook2"></span></a>
-                </li>
-                <li>
-                    <a title="@_l("txt.linkedinpage")"><span class="icon-linkedin"></span></a>
-                </li>
-            </ul>
-        </div>
-    </div>
+<div class="h-swiper">
+    @if (WorkExperinceList is not null)
+    {
+        @foreach (var we in WorkExperinceList)
+        {
+            <WrokHistoryCard WorkExperince=we />
+        }
+    }
 </div>
+
+@code {
+
+    #region Properties
+
+    [Inject] public IEnumerable<WorkExperinceModel> WorkExperinceList { get; private set; }
+    #endregion
+}

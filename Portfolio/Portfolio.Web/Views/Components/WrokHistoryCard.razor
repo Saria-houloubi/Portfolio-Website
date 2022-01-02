@@ -1,0 +1,55 @@
+﻿@inherits _BaseLocalizedComponent
+<div class="h-100 d-flex bg-@WorkExperince.CompanyName.ToLower()-second my-3">
+
+    <div class="d-flex-70 m-3 font-l font-m-m">
+        <div class="d-flex">
+            <div class="d-flex-70">
+                <div class="my-3 d-show-m">
+                    <span class=" header-txt ">@WorkExperince.CompanyName</span>
+                    <span class="d-block">@WorkExperince.Location</span>
+                </div>
+                <span>@_l("txt.title") : </span> <span>@WorkExperince.Title</span>
+                <hr />
+                <span>@_l("txt.joined") : </span> <span>@WorkExperince.StartYear</span>
+                <hr />
+                <span>@_l("txt.left") : </span> <span>@(WorkExperince.EndYear.HasValue ? WorkExperince.EndYear :  @_l("txt.present"))</span>
+                <hr />
+            </div>
+
+            <p class="d-flex-30 m-2 d-hide-m">
+                @string.Join(" ",WorkExperince.Tags)
+            </p>
+
+        </div>
+        <span class="header-txt">@_l("txt.responsibilities") : </span>
+        <p class="p-1">
+            @this.RenderRawHtml(WorkExperince.RawDescription)
+        </p>
+    </div>
+
+    <div class="d-flex-30 m-0 bg-@WorkExperince.CompanyName.ToLower()-main  font-xl m-3 d-hide-m">
+        <div class="text-center d-flex d-flex-column h-100">
+            <span class=" header-txt ">@WorkExperince.CompanyName</span>
+            <br />
+            <div class="d-flex-70 p-relative">
+                <img src="@WorkExperince.LogoUrl " class="w-50 h-max-100 p-center" />
+            </div>
+            <span class="d-block">@WorkExperince.Location</span>
+            <br />
+            <ul class="h-list p-0">
+                @foreach (var rawLink in WorkExperince.RawLinks)
+                {
+                    <li class="color-dark ">
+                        @this.RenderRawHtml(rawLink)
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>
+
+
+@code {
+    [Parameter] public WorkExperinceModel WorkExperince { get; set; }
+}
+

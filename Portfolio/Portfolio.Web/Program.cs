@@ -1,5 +1,6 @@
 using Portfolio.Core.Abstractions;
 using Portfolio.Web.Middlewares;
+using Portfolio.Web.Models;
 using Portfolio.Web.Services;
 using Portfolio.Web.Setup;
 
@@ -16,7 +17,8 @@ builder.Services.AddServerSideBlazor();
 builder.Services.AddScoped<ICurrentUserState, DefaultCurrentUserState>();
 builder.Services.AddSingleton<IDateTimeProvider, UtcDateTimeProvider>();
 
-builder.Services.Data_RegisterProjectsFromConfig(builder.Configuration);
+builder.Services.Data_RegisterFromConfig<ProjectModel>(builder.Configuration, "Me:Projects");
+builder.Services.Data_RegisterFromConfig<WorkExperinceModel>(builder.Configuration, "Me:WorkExperinces");
 builder.Services.RegisterSolutionServices(builder.Configuration);
 
 var app = builder.Build();

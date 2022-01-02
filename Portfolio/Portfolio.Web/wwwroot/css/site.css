@@ -12,6 +12,7 @@
     --font-family-header: "OCR A";
 }
 
+
 html,
 body {
     font-family: var(--font-family-text);
@@ -43,6 +44,22 @@ main {
     flex-grow: 1;
 }
 
+button {
+    background-color: transparent;
+    color: var(--main-fg-light-color);
+    border: solid;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-bottom: solid 3px;
+    padding-bottom: 5px;
+    border-bottom-color: var(--main-fg-dark-color);
+}
+
+    button:hover {
+        border-bottom-color: var(--main-fg-light-color);
+    }
+
 .header-main-text {
     height: 100%;
     display: flex;
@@ -72,14 +89,22 @@ header {
         font-weight: bold;
     }
 
+.h-swiper {
+    display: flex;
+    overflow: hidden;
 
-/*
+}
+    .h-swiper > :first-child {
+        min-width:100vw;
+    }
+   
+    /*
     NonBootstrap helper classe
     ********************************************
 */
-.b-full {
-    border: 2px solid var(--main-fg-dark-color);
-}
+    .b-full {
+        border: 2px solid var(--main-fg-dark-color);
+    }
 
 .b-bottom {
     border-bottom: 2px solid var(--main-fg-dark-color);
@@ -104,12 +129,13 @@ header {
 .m-2 {
     margin: 10px;
 }
+
 .my-3 {
     margin: 20px 0px !important;
 }
 
 .p-1 {
-    padding: 5px !important; 
+    padding: 5px !important;
 }
 
 .border-round-1 {
@@ -128,20 +154,28 @@ header {
 .d-flex-80 {
     flex: 70% !important;
 }
+
 .d-flex-30 {
     flex: 30% !important;
 }
+
 .d-flex-10 {
     flex: 10% !important;
 }
-.d-flex-auto{
-    flex:auto !important;
+
+.d-flex-auto {
+    flex: auto !important;
 }
+
 .d-flex-column {
     flex-flow: column !important;
 }
-.d-show-m{
+
+.d-show-m {
     display: none !important;
+}
+.text-wrap{
+    word-wrap:break-word;
 }
 /*
     Horizantel list
@@ -184,9 +218,10 @@ header {
     transform: translate(-50%, -50%);
 }
 
-.p-relative{
+.p-relative {
     position: relative !important;
 }
+
 .w-50 {
     width: 50% !important;
 }
@@ -206,15 +241,19 @@ header {
 .h-100 {
     height: 100% !important;
 }
+
 .min-h-100 {
     min-height: 100% !important;
 }
-.h-max-100{
+
+.h-max-100 {
     max-height: 100% !important;
 }
+
 .font-xl {
     font-size: var(--font-weight-xl) !important;
 }
+
 .font-l {
     font-size: var(--font-weight-l) !important;
 }
@@ -335,6 +374,7 @@ footer {
 .bg-firstscreen-second {
     background-color: #14AFE2 !important;
 }
+
 .bg-firstscreen-main {
     background-color: #073B4D !important;
 }
@@ -403,6 +443,7 @@ footer {
     .my-3-m {
         margin: 10px 0px !important;
     }
+
     .font-m-m {
         font-size: var(--font-weight-m) !important;
     }
@@ -498,9 +539,11 @@ footer {
 .icon-hammer:before {
     content: "\e996";
 }
+
 .icon-sphere:before {
     content: "\e9c9";
 }
+
 .icon-sad2:before {
     content: "\e9e6";
 }

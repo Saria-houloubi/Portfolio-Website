@@ -60,12 +60,12 @@ namespace Portfolio.Web.Setup
             }
         }
         /// <summary>
-        /// Shortcut to regisert an IEnumrable of <see cref="ProjectModel"/>
+        /// Shortcut to regisert an IEnumrable of <see cref="T"/>
         /// </summary>
         /// <param name="services"></param>
         /// <param name="configuration">the configuration to read from</param>
         /// <param name="keyPath">The key path in confiuguration to read values in</param>
-        public static void Data_RegisterProjectsFromConfig(this IServiceCollection services, IConfiguration configuration, string keyPath = "Me:Projects")
+        public static void Data_RegisterFromConfig<T>(this IServiceCollection services, IConfiguration configuration, string keyPath)
         {
             if (services is null)
             {
@@ -82,13 +82,14 @@ namespace Portfolio.Web.Setup
                 throw new ArgumentException($"'{nameof(keyPath)}' cannot be null or empty.", nameof(keyPath));
             }
 
-            var projects = new List<ProjectModel>();
+            var data = new List<T>();
 
             //Read the configuration values
-            configuration.Bind(keyPath, projects);
+            configuration.Bind(keyPath, data);
 
             //Add it in the injection kernel
-            services.AddSingleton<IEnumerable<ProjectModel>>(projects);
+            services.AddSingleton<IEnumerable<T>>(data);
         }
+     
     }
 }
