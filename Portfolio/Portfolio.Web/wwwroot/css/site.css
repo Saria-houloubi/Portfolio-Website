@@ -89,15 +89,7 @@ header {
         font-weight: bold;
     }
 
-.h-swiper {
-    display: flex;
-    overflow: hidden;
 
-}
-    .h-swiper > :first-child {
-        min-width:100vw;
-    }
-   
     /*
     NonBootstrap helper classe
     ********************************************
@@ -398,7 +390,13 @@ footer {
         }
 
     .bottom-nav {
-        display: flex !important;
+        position:sticky !important;
+        display:flex !important;
+        justify-content:center;
+        bottom:0;
+        background:#000000AF;
+       border-radius:10px 10px 0 0;
+       padding:8px;
     }
 
     .pcf-focused {
@@ -450,7 +448,6 @@ footer {
     /*
     ********************************************
     */
-
 }
 
 #animated_bg_shapes {
@@ -592,13 +589,11 @@ footer {
 
 .animated-title {
     color: var(--main-fg-light-color);
-    font-family: Roboto, Arial, sans-serif;
-    height: 90vmin;
-    left: 50%;
+    /*   left: 50%;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 90vmin;
+ */
 }
 
     .animated-title > div {
